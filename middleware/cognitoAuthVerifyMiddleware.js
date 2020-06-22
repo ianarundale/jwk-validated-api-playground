@@ -4,9 +4,9 @@ var jwt = require('jsonwebtoken')
 
 // TODO: Security issues in npm audit related to jwk/jsonwebtoken
 
-var ISSUER =  `https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_rt033XJAo`
-var MAX_TOKEN_AGE = 3600 // TODO: THIS NEEDS reconsidering
-var CLIENT_ID = "6nrs5oi8lgalvnk40crs86r6gn"
+var ISSUER = process.env.JWK_ISSUER
+var MAX_TOKEN_AGE = 3600 // TODO: This should be revisited
+var CLIENT_ID = process.env.CLIENT_ID
 var TOKEN_USE_ACCESS = "access"
 var TOKEN_USE_ID = "id"
 var ALLOWED_TOKEN_USES = [TOKEN_USE_ACCESS, TOKEN_USE_ID]
